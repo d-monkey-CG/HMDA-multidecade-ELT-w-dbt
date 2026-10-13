@@ -36,7 +36,14 @@ clean-targets:         # directories to be removed by `dbt clean`
 # using the `{{ config(...) }}` macro.
 
 models:
+<<<<<<< HEAD
+  staging:
+    # Applies to all files under models/staging/
+    staging:
+      +materialized: view
+=======
   hmda_project:
     # Applies to all files under models/staging/
     staging:
       +materialized: table
+>>>>>>> 55b4f46e31cc02c950119c8a1a633c7af7c705a2
