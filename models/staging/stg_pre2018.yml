@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 version: 2
 
 models:
@@ -21,3 +22,6 @@ models:
               - not_null
               
                 
+=======
+
+>>>>>>> 55b4f46e31cc02c950119c8a1a633c7af7c705a2

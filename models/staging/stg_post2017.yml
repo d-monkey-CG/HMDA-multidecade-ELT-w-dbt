@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 models:
     - name: stg_post2017
       description: "HMDA post2017 dbt model"
@@ -17,3 +18,6 @@ models:
           - name: action_taken
             tests:
               - not_null
+=======
+
+>>>>>>> 55b4f46e31cc02c950119c8a1a633c7af7c705a2
