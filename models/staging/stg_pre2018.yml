@@ -1,0 +1,23 @@
+version: 2
+
+models:
+    - name: stg_pre2018
+      description: "HMDA pre2018 dbt model"
+      columns:
+          - name: as_of_year 
+            tests:
+                - not_null
+          - name: state_code
+            tests:
+                - not_null
+          - name: loan_type
+            tests:
+                - not_null
+          - name: rate_spread
+            tests:
+              - not_null
+          - name: action_taken
+            tests:
+              - not_null
+              
+                
