@@ -1,27 +1,28 @@
-<<<<<<< HEAD
 version: 2
 
-models:
-    - name: stg_pre2018
-      description: "HMDA pre2018 dbt model"
-      columns:
-          - name: as_of_year 
-            tests:
-                - not_null
-          - name: state_code
-            tests:
-                - not_null
-          - name: loan_type
-            tests:
-                - not_null
-          - name: rate_spread
-            tests:
-              - not_null
-          - name: action_taken
-            tests:
-              - not_null
-              
-                
-=======
+sources:
+  - name: raw_hmda
+    database: hmda-data-project
+    dataset: HMDA_ALL
+    tables:
+      - name: hmda_pre2018
 
->>>>>>> 55b4f46e31cc02c950119c8a1a633c7af7c705a2
+models:
+  - name: stg_pre2018
+    description: "HMDA pre-2018 staging model"
+    columns:
+      - name: as_of_year
+        tests:
+          - not_null
+
+      - name: state_code
+        tests:
+          - not_null
+
+      - name: loan_type
+        tests:
+          - not_null
+
+      - name: action_taken
+        tests:
+          - not_null
