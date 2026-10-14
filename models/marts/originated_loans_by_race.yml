@@ -1,0 +1,20 @@
+version: 2
+
+models:
+  - name: originated_loans_by_race
+    description: "Originated HMDA loans aggregated by activity year and race."
+    columns:
+      - name: activity_year
+        description: "The calendar year of the HMDA submission."
+        tests:
+          - not_null
+
+      - name: race_ethnicity_combined
+        description: "Reported race/ethnicity category of the primary applicant."
+        tests:
+          - not_null
+
+      - name: total_originated_loans
+        description: "Count of originated loan records matching the group."
+        tests:
+          - not_null
