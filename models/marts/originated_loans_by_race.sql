@@ -1,3 +1,5 @@
+{{ config(materialized='table')}}
+
 -- Layer 3: originated loans aggregated by race and year
 
 select 
