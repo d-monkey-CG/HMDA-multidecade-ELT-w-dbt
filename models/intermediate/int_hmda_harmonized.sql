@@ -195,7 +195,7 @@ post2017 as (
         cast(activity_year as int64) as activity_year,
         upper(trim(safe_cast(state_code as string))) as state_code,
         safe_cast(loan_amount as float64) as loan_amount,
-        safe_cast(income as float64) as applicant_income,
+        safe_cast(income as float64) * 1000.0 as applicant_income,
         safe_cast(rate_spread as float64) as rate_spread,
 
         -- Loan Characteristics
