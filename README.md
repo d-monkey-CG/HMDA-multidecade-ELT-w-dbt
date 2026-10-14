@@ -1,15 +1,3 @@
-Welcome to your new dbt project!
-
-### Using the starter project
-
-Try running the following commands:
-- dbt run
-- dbt test
+This project looks at the mortgage application data from the national HMDA data sets for the years 2007 through 2025. The data set is quite large, it was extracted, loaded, and pre-processed using PySpark, Google Cloud Storage and BigQuery data pipelines. The transformation layer was completely done by using dbt studio. The data engineering portion has its own folder structure.
 
 
-### Resources:
-- Learn more about dbt [in the docs](https://docs.getdbt.com/docs/introduction)
-- Check out [Discourse](https://discourse.getdbt.com/) for commonly asked questions and answers
-- Join the [dbt community](https://getdbt.com/community) to learn from other analytics engineers
-- Find [dbt events](https://events.getdbt.com) near you
-- Check out [the blog](https://blog.getdbt.com/) for the latest news on dbt's development and best practices
