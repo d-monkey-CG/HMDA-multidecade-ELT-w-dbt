@@ -229,15 +229,15 @@ post2017 as (
             else 'Unknown'
         end as action_taken,
 
-        -- Applicant Demographics
-        case safe_cast(applicant_race_1 as int64)
-            when 1 then 'American Indian or Alaska Native'
-            when 2 then 'Asian'
-            when 3 then 'Black or African American'
-            when 4 then 'Native Hawaiian or Other Pacific Islander'
-            when 5 then 'White'
-            when 6 then 'Information not provided'
-            when 7 then 'Not applicable'
+        -- Applicant Demographics (Harmonized Race Classification)
+        case 
+            when safe_cast(applicant_race_1 as int64) = 1 then 'American Indian or Alaska Native'
+            when safe_cast(applicant_race_1 as int64) in (2, 21, 22, 23, 24, 25, 26, 27) then 'Asian'
+            when safe_cast(applicant_race_1 as int64) = 3 then 'Black or African American'
+            when safe_cast(applicant_race_1 as int64) in (4, 41, 42, 43, 44) then 'Native Hawaiian or Other Pacific Islander'
+            when safe_cast(applicant_race_1 as int64) = 5 then 'White'
+            when safe_cast(applicant_race_1 as int64) = 6 then 'Information not provided'
+            when safe_cast(applicant_race_1 as int64) = 7 then 'Not applicable'
             else 'Unknown'
         end as applicant_race,
 
