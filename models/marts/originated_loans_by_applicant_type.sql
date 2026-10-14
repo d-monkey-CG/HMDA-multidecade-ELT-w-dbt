@@ -15,7 +15,7 @@ select
 
 from {{ ref("int_hmda_harmonized") }}
 
-    where action_taken = 'Loan originated'
+    where action_taken = 'Loan originated' AND loan_purpose = 'Home purchase'
     group by 
         activity_year, 
         applicant_sex, 
