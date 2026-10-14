@@ -1,0 +1,27 @@
+version: 2
+
+models:
+  - name: originated_loans_by_applicant_type
+    description: "Originated HMDA loans aggregated by activity year, borrower sex, and single vs. co-borrower status."
+    columns:
+      - name: activity_year
+        description: "The calendar year of the HMDA submission."
+        tests:
+          - not_null
+
+      - name: applicant_sex
+        description: "Reported sex category of the primary applicant."
+        tests:
+          - not_null
+
+      - name: borrower_status
+        description: "Derived status indicating whether the loan has a co-applicant ('single' vs 'with co-borrower')."
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['single', 'with co-borrower']
+
+      - name: total_originated_loans
+        description: "Count of originated loan records matching the group."
+        tests:
+          - not_null
