@@ -19,7 +19,7 @@ from googleapiclient.errors import HttpError
 # ==========================================
 # CONFIGURATION
 # ==========================================
-SERVICE_ACCOUNT_FILE = "/Users/joannasanchez/Desktop/gcp_env/hmda_data_keys/hmda-data-project-cdaf2c3b61f1.json"
+SERVICE_ACCOUNT_FILE = "/Users/joannasanchez/Desktop/gcp_env/path"
 
 GDRIVE_FOLDER_ID = "1o-mDbVPcXfplRIdJwto6P_PYWCaqSlxP"
 
