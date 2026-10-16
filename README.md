@@ -1,5 +1,4 @@
-This project looks at the mortgage application data from the national HMDA data sets for the years 2007 through 2025. Taking into consideration the schema change (reposting requirements) as of 2018.
+This project analyzes national HMDA mortgage application records from 2007 to 2025, harmonizing schema shifts following the 2018 reporting revisions.
 
-The data set is quite large, it was extracted, loaded, and pre-processed using PySpark, Google Cloud Storage and BigQuery data pipelines. The transformation layer was completely done by using dbt studio. The data engineering portion has its own folder structure. The EL part of the pipeline is a simple batch job, which can be run on demand; this is largely due to the nature of the data, which for my purposes only becomes available and needs to be updated once a year. 
-
+Due to the dataset's scale, extraction, staging, and pre-processing are handled via PySpark, Google Cloud Storage, and BigQuery. Transformations are managed through dbt within a dedicated data engineering directory. Because HMDA data is released on an annual cycle, the EL pipeline operates as an on-demand batch job executed as new data becomes available.
 
