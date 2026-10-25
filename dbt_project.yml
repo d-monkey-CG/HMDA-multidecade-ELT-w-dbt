@@ -35,8 +35,8 @@ models:
       +materialized: table
 
 seeds:
-  your_project_name:
-    raw_fips_places:
+  hmda_project:
+    fips_reference_table:
       +column_types:
         "StCnty FIPS Code": string
         "State FIPS Code": string
