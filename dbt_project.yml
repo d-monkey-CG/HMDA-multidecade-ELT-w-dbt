@@ -38,9 +38,9 @@ seeds:
   hmda_project:
     fips_reference_table:
       +column_types:
-        "StCnty FIPS Code": string
-        "State FIPS Code": string
-        "County Code": string
-        "State Code": string
-        "County Name": string
-        "State Name": string
+        "`StCnty FIPS Code`": string
+        "`State FIPS Code`": string
+        "`County Code`": string
+        "`State Code`": string
+        "`County Name`": string
+        "`State Name`": string
