@@ -19,7 +19,8 @@ models:
         tests:
           - not_null
           - accepted_values:
-              values: ['single', 'with co-borrower']
+              arguments:
+                values: ['single', 'with co-borrower']
 
       - name: total_originated_loans
         description: "Count of originated loan records matching the group."
