@@ -1,0 +1,36 @@
+version: 2
+
+sources:
+  - name: raw_hmda
+    database: hmda-data-project
+    dataset: HMDA_ALL
+    tables:
+      - name: hud_crosswalk
+
+models:
+  - name: stg_dim_hud_crosswalk
+    description: "census zip_tract to zipcode transformation"
+    columns:
+      - name: zip
+        tests:
+          - not_null
+
+      - name: state
+        tests:
+          - not_null
+
+      - name: city
+        tests:
+          - not_null
+
+      - name: hmda_year
+        tests:
+          - not_null
+      
+      - name: geoid
+        tests:
+          - not_null
+
+      - name: res_ratio
+        tests:
+          - not_null
