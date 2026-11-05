@@ -9,7 +9,7 @@ renamed as (
 
     select
         cast(activity_year as int64) as activity_year,
-        upper(trim(safe_cast(state_code as string))) as state_code,
+        cast(state_code as string) as state_code,
         safe_cast(loan_amount as float64) as loan_amount,
         safe_cast(income as float64) * 1000.0 as applicant_income,
         safe_cast(rate_spread as float64) as rate_spread,
@@ -37,8 +37,7 @@ renamed as (
             when 1 then 'Home purchase'
             when 2 then 'Home improvement'
             when 31 then 'Refinancing'
-            when 32 then 'Refinancing'
-            when 3 then 'Refinancing'
+            when 32 then 'Cash-out refinancing'
             else 'Other / Not applicable'
         end as loan_purpose,
 
