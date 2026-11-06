@@ -2,24 +2,6 @@
     materialized='view'
 ) }}
 
-with crosswalk_deduped as (
-    -- Take the ZIP code with the highest residential ratio to prevent loan row duplication
-    select
-        census_tract,
-        zipcode
-    from (
-        select
-            census_tract,
-            zipcode,
-            row_number() over (
-                partition by census_tract 
-                order by res_ratio desc
-            ) as rn
-        from {{ ref('stg_dim_hud_crosswalk') }}
-    )
-    where rn = 1
-)
-
 select 
     sp.activity_year,
     sp.state_code,
@@ -46,5 +28,5 @@ select
     sdhc.zipcode
 
 from {{ ref('stg_post2017') }} as sp
-left join crosswalk_deduped as sdhc
+left join {{ ref('stg_dim_hud_crosswalk') }} as sdhc
     on sp.census_tract = sdhc.census_tract
